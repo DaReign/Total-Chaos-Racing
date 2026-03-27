@@ -1,0 +1,9 @@
+Side Object 1|402145346|1|926c3cc1a0015ee44b8edfabc0abdb6c|6641b0d643f3f3641a48f1a476baf386|2|0.1|1|0|0|0|0 0/0 0.1/-5 0.1/-5 0/0 0/0 0/|||0|False|False|True|0|True|0|0|1|Assets/MyStuffs/External/SimpleTown/Models/fence_long_spike.fbx|||Assets/Pavement textures pack/pavement 01/pavement pattern 01.mat|0|0.98|1.02|0|0|0|0|0|0
+so2|886750853|1|||10|0.1|1|2|0|0|0.7655566 0.3419486/-0.58 0.64/|||0|True|True|True|0|True|0|0|1|||||0|1|1|0|0|0|0|0|0
+FenceLeft|797972316|0|10279873252539049bf4ab1b776dd119||3|0.1|1|2|-20|0||||0|True|True|False|0|True|0|0|1|Assets/Prefabs/woodRailing.prefab||||0|1|1|0|0|-20|1|0|0
+FenceRight|406389970|0|10279873252539049bf4ab1b776dd119||3|0.1|1|2|20|0||||0|True|True|False|0|True|0|0|1|Assets/Prefabs/woodRailing.prefab||||0|1|1|0|0|20|0|0|0
+WoodenFenceLeft|831318124|0|4e9d77f4b4d52bc49974f8b5f78f2e04||10|0.1|1|2|-20|0||||0|True|True|True|0|True|0|0|1|Assets/Prefabs/wooden_fence.prefab||||0|1|1|0|0|-20|0|0|0
+WallLeft|154629708|0|0943f87fb26518e4aada83cabc0d4847||10|0.1|1|2|-22|0||||0|True|True|False|0|True|0|0|1|Assets/Prefabs/Wall.prefab||||0|1|1|0|0|-22|1|0|0
+WallRight|717017907|0|0943f87fb26518e4aada83cabc0d4847||10|0.1|1|2|22|0||||0|True|True|False|0|True|0|0|1|Assets/Prefabs/Wall.prefab||||0|1|1|0|0|22|0|0|0
+Pavement1Left|379789853|0|ae15260f550dc2c4e927415c2f239b8c|6641b0d643f3f3641a48f1a476baf386|1|0.1|1|0|-10|0||ae15260f550dc2c4e927415c2f239b8c|ae15260f550dc2c4e927415c2f239b8c|0|True|False|True|0|True|0|0|1|Assets/Prefabs/SideObjects/Pavement1.prefab|Assets/Prefabs/SideObjects/Pavement1.prefab|Assets/Prefabs/SideObjects/Pavement1.prefab|Assets/Pavement textures pack/pavement 01/pavement pattern 01.mat|0|1|1|0|0|-10|0|0|0
+

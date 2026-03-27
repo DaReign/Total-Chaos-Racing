@@ -1,0 +1,85 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="mainmenu_data" version="1.3.0" audacityversion="2.1.1" sel0="0.0000000000" sel1="0.0000000000" vpos="0" h="0.0000000000" zoom="5.3833007813" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags/>
+	<wavetrack name="Mussorgsky · Baba Yaga · Dudamel" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2771278">
+				<waveblock start="0">
+					<simpleblockfile filename="e000091a.au" len="221184" min="-0.681311" max="0.48311" rms="0.076909"/>
+				</waveblock>
+				<waveblock start="221184">
+					<simpleblockfile filename="e0000dae.au" len="262144" min="-0.914067" max="0.870804" rms="0.103913"/>
+				</waveblock>
+				<waveblock start="483328">
+					<simpleblockfile filename="e0000b2e.au" len="262144" min="-0.457523" max="0.493402" rms="0.065939"/>
+				</waveblock>
+				<waveblock start="745472">
+					<simpleblockfile filename="e0000dab.au" len="262144" min="-0.947231" max="0.811771" rms="0.144646"/>
+				</waveblock>
+				<waveblock start="1007616">
+					<simpleblockfile filename="e0000a6f.au" len="262144" min="-0.769041" max="0.882416" rms="0.138264"/>
+				</waveblock>
+				<waveblock start="1269760">
+					<simpleblockfile filename="e0000fe5.au" len="262144" min="-0.899311" max="0.940546" rms="0.172056"/>
+				</waveblock>
+				<waveblock start="1531904">
+					<simpleblockfile filename="e0000ad9.au" len="262144" min="-0.649174" max="0.650595" rms="0.087589"/>
+				</waveblock>
+				<waveblock start="1794048">
+					<simpleblockfile filename="e0000426.au" len="262144" min="-0.930946" max="0.89235" rms="0.131643"/>
+				</waveblock>
+				<waveblock start="2056192">
+					<simpleblockfile filename="e0000d55.au" len="262144" min="-0.517038" max="0.48425" rms="0.091501"/>
+				</waveblock>
+				<waveblock start="2318336">
+					<simpleblockfile filename="e0000fd8.au" len="262144" min="-0.970437" max="0.938421" rms="0.196596"/>
+				</waveblock>
+				<waveblock start="2580480">
+					<simpleblockfile filename="e0000dbc.au" len="190798" min="-0.261313" max="0.291829" rms="0.023709"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Mussorgsky · Baba Yaga · Dudamel" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2771278">
+				<waveblock start="0">
+					<simpleblockfile filename="e00007dc.au" len="221184" min="-0.577435" max="0.459205" rms="0.074551"/>
+				</waveblock>
+				<waveblock start="221184">
+					<simpleblockfile filename="e0000c31.au" len="262144" min="-0.900639" max="0.73207" rms="0.08922"/>
+				</waveblock>
+				<waveblock start="483328">
+					<simpleblockfile filename="e0000367.au" len="262144" min="-0.515066" max="0.429746" rms="0.060183"/>
+				</waveblock>
+				<waveblock start="745472">
+					<simpleblockfile filename="e0000c73.au" len="262144" min="-0.92156" max="0.807655" rms="0.140008"/>
+				</waveblock>
+				<waveblock start="1007616">
+					<simpleblockfile filename="e0000f92.au" len="262144" min="-0.718977" max="0.754461" rms="0.137778"/>
+				</waveblock>
+				<waveblock start="1269760">
+					<simpleblockfile filename="e0000483.au" len="262144" min="-1.034356" max="0.940858" rms="0.183906"/>
+				</waveblock>
+				<waveblock start="1531904">
+					<simpleblockfile filename="e0000788.au" len="262144" min="-0.725276" max="0.76763" rms="0.095776"/>
+				</waveblock>
+				<waveblock start="1794048">
+					<simpleblockfile filename="e0000ab2.au" len="262144" min="-0.723599" max="0.882973" rms="0.117356"/>
+				</waveblock>
+				<waveblock start="2056192">
+					<simpleblockfile filename="e0000f37.au" len="262144" min="-0.319014" max="0.384969" rms="0.07635"/>
+				</waveblock>
+				<waveblock start="2318336">
+					<simpleblockfile filename="e0000793.au" len="262144" min="-0.811875" max="0.901483" rms="0.17766"/>
+				</waveblock>
+				<waveblock start="2580480">
+					<simpleblockfile filename="e0000a60.au" len="190798" min="-0.336512" max="0.280322" rms="0.027403"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>
