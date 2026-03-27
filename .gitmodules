@@ -1,0 +1,3 @@
+[submodule "Assets/MyAssets/_UnityReusablePackages"]
+	path = Assets/MyAssets/_UnityReusablePackages
+	url = https://github.com/DaReign/_UnityReusablePackages
