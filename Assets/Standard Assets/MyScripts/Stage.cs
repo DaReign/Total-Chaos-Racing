@@ -59,6 +59,9 @@ public class Stage : MonoBehaviour {
 
     public bool NotMovieVar = true;
 
+    private int _prevPlayerPosition;
+    private int _prevLeaderboardHash;
+
     private GameObject Position1;
     private GameObject Position2;
     private GameObject Position3;
@@ -99,8 +102,9 @@ public class Stage : MonoBehaviour {
     IEnumerator enableWeapons()
     {
         StartWeaponEnabling = true;
-        yield return new WaitForSeconds(2500.0f);
+        yield return new WaitForSeconds(25.0f);
         WeaponsEnabled = true;
+        RaceEvents.FireWeaponsEnabled(true);
         MissileButton.SetActive(true);
         HomingMissileButton.SetActive(true);
         MineButton.SetActive(true);
@@ -187,6 +191,7 @@ public class Stage : MonoBehaviour {
         laps = int.Parse(PlayerPrefs.GetString("RaceLaps"));
         //laps = 1;
 
+        RaceEvents.FireRaceStarted();
     }
 	
 
@@ -233,6 +238,9 @@ public class Stage : MonoBehaviour {
                 }
                 bonusesAdded = true;
                 raceEnded = true;
+
+                // UI Toolkit race finished event
+                RaceEvents.FireRaceFinished(playerPosition, playerGotPoints, playerGotMoney);
             }
             FinishRaceText.GetComponent<UnityEngine.UI.Text>().text = "Race finished \n You got " + playerGotPoints + " points \n" + "You got " + playerGotMoney + " cash";
         }
@@ -282,30 +290,48 @@ public class Stage : MonoBehaviour {
     {
         SortCarsList();
         int placeI = 0;
+        var leaderboard = new System.Collections.Generic.List<LeaderboardEntry>();
+        int playerPos = 0;
         for (int i = 0; i < listOfCarsSorted.Count; i++)
         {
-            if (!listOfCarsSorted[i].GetComponent<CarStats>().wrecked)
+            var stats = listOfCarsSorted[i].GetComponent<CarStats>();
+            string status = stats.wrecked ? "wrecked" : "";
+            if (!stats.wrecked)
             {
-                if (listOfCarsSorted[i].GetComponent<CarStats>().raceFinished == false)
+                if (stats.raceFinished == false)
                 {
-                    UpdatePosition(i+1, listOfCarsSorted[i].GetComponent<CarStats>().RacerName, listOfCarsSorted[i].GetComponent<CarStats>().Hull, listOfCarsSorted[i].GetComponent<CarStats>().waypointsToFinish, "");
+                    UpdatePosition(i+1, stats.RacerName, stats.Hull, stats.waypointsToFinish, "");
                     placeI++;
                 }
             }
             else
             {
-                UpdatePosition(i+1, listOfCarsSorted[i].GetComponent<CarStats>().RacerName, listOfCarsSorted[i].GetComponent<CarStats>().Hull, listOfCarsSorted[i].GetComponent<CarStats>().waypointsToFinish, "wrecked");
+                UpdatePosition(i+1, stats.RacerName, stats.Hull, stats.waypointsToFinish, "wrecked");
                 placeI++;
             }
+            leaderboard.Add(new LeaderboardEntry { Name = stats.RacerName, Position = i + 1 });
+            if (stats.racerId == 0) playerPos = i + 1;
         }
         if (listOfWinners.Count > 0) {
             for (int i = 0; i < listOfWinners.Count; i++)
             {
                 UpdateFinishedPosition(i+1, listOfWinners[i].GetComponent<CarStats>().RacerName);
-                //GUI.Box(new Rect(0, (1 + i) * 20, 200, 20), "" + listOfWinners[i].GetComponent<CarStats>().RacerName + " " + (listOfWinners[i].GetComponent<CarStats>().waypointsToFinish));
             }
+        }
 
-            //FinishedListUI();
+        // UI Toolkit: fire events only when data changes
+        if (playerPos != _prevPlayerPosition)
+        {
+            _prevPlayerPosition = playerPos;
+            RaceEvents.FirePlayerPositionChanged(playerPos);
+        }
+        int hash = leaderboard.Count;
+        for (int i = 0; i < leaderboard.Count; i++)
+            hash = hash * 31 + leaderboard[i].Position + leaderboard[i].Name.GetHashCode();
+        if (hash != _prevLeaderboardHash)
+        {
+            _prevLeaderboardHash = hash;
+            RaceEvents.FireLeaderboardChanged(leaderboard);
         }
     }
 

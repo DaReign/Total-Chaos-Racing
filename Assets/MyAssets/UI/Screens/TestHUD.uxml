@@ -1,0 +1,65 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements"
+         xsi="http://www.w3.org/2001/XMLSchema-instance"
+         engine="UnityEngine.UIElements"
+         noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd">
+
+    <Style src="../Styles/RacingBase.uss" />
+    <Style src="TestHUD.uss" />
+
+    <ui:VisualElement name="hud-root" class="hud-root">
+
+        <!-- TOP ROW -->
+        <ui:VisualElement name="top-row" class="top-row">
+
+            <!-- Speed panel (top-left) -->
+            <ui:VisualElement name="speed-panel" class="glass-panel speed-panel">
+                <ui:Label name="speed-value" text="0" class="speed-value" />
+                <ui:Label name="speed-unit" text="MPH" class="speed-unit" /><!-- CarController.CurrentSpeed returns MPH -->
+            </ui:VisualElement>
+
+            <!-- Race info panel (top-right) -->
+            <ui:VisualElement name="race-info-panel" class="glass-panel race-info-panel">
+                <ui:Label name="lap-label" text="Lap 0/0" class="info-label" />
+                <ui:Label name="position-label" text="P1" class="info-label" />
+                <ui:VisualElement name="hull-bar-bg" class="hull-bar-bg">
+                    <ui:VisualElement name="hull-bar-fill" class="hull-bar-fill" />
+                </ui:VisualElement>
+                <ui:Label name="hull-text" text="8000" class="hull-text" />
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+
+        <!-- MIDDLE ROW — Weapons -->
+        <ui:VisualElement name="weapons-bar" class="weapons-bar">
+            <ui:Button name="missile-btn" text="Missile: 0" class="weapon-btn" />
+            <ui:Button name="homing-btn" text="Homing: 0" class="weapon-btn" />
+            <ui:Button name="mine-btn" text="Mine: 0" class="weapon-btn" />
+            <ui:Button name="back-to-track-btn" text="BackToTrack" class="weapon-btn back-to-track" />
+        </ui:VisualElement>
+
+        <!-- BOTTOM ROW — Driving Controls -->
+        <ui:VisualElement name="drive-controls" class="drive-controls">
+
+            <!-- Left side: joystick above, steer buttons below -->
+            <ui:VisualElement name="steer-column" class="steer-column">
+                <ui:VisualElement name="joystick-area" class="joystick-area">
+                    <ui:VisualElement name="joystick-base" class="joystick-base">
+                        <ui:VisualElement name="joystick-handle" class="joystick-handle" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="steer-group" class="control-group">
+                    <ui:Button name="steer-left-btn" text="◀" class="drive-btn steer-btn" />
+                    <ui:Button name="steer-right-btn" text="▶" class="drive-btn steer-btn" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <!-- Right side: brake + gas -->
+            <ui:VisualElement name="pedals-group" class="control-group">
+                <ui:Button name="brake-btn" text="BRAKE" class="drive-btn brake-btn" />
+                <ui:Button name="gas-btn" text="GAS" class="drive-btn gas-btn" />
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+</ui:UXML>

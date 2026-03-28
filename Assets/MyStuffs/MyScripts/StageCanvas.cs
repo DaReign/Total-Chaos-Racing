@@ -12,6 +12,7 @@ public class StageCanvas : MonoBehaviour {
     public void LoadLevel ()
     {
         Debug.Log("Clicked Button");
+        RaceEvents.ClearAll();
         Application.LoadLevel("garage");
         GameObject.Find("Global").GetComponent<Stage>().listOfCars.Clear();
         GameObject.Find("Global").GetComponent<Stage>().listOfCarsSorted.Clear();

@@ -24,6 +24,7 @@ public class Human : MonoBehaviour {
         LapsText = GameObject.Find("LapsText");
         AllLapsVar = Global.GetComponent<Stage>().laps;
         LapsText.GetComponent<UnityEngine.UI.Text>().text = "Laps 0/"+ AllLapsVar;
+        RaceEvents.FireLapChanged(0, AllLapsVar);
         currentWaypoint = 0;
         Target = Global.GetComponent<WaypointsList>().listOfWaypoints[currentWaypoint].transform;
         PreviousTarget = Target;
@@ -62,6 +63,7 @@ public class Human : MonoBehaviour {
             {
                 GetComponent<CarStats>().currentLap++;
                 GetComponent<CarStats>().startWaypointReached = true;
+                RaceEvents.FireLapChanged(GetComponent<CarStats>().currentLap, AllLapsVar);
             }
 
             if (GetComponent<CarStats>().startWaypointReached)

@@ -186,6 +186,7 @@ public class CarStats : MonoBehaviour
             Hull = 0;
             Debug.Log("Dead!");
         }
+        if (racerId == 0) RaceEvents.FireHullChanged(Hull, HullMax);
     }
 
     void OnChangeHull(int hull)
@@ -236,6 +237,10 @@ public class CarStats : MonoBehaviour
 
     void Update () {
         speed = GetComponent<CarController>().m_Rigidbody.linearVelocity.magnitude;
+        if (racerId == 0)
+        {
+            RaceEvents.FireSpeedChanged(GetComponent<CarController>().CurrentSpeed);
+        }
         /*
         if (racerId == 0 && Global.GetComponent<Stage>().WeaponsEnabled)
         {
@@ -297,6 +302,11 @@ public class CarStats : MonoBehaviour
 
                 }
             }
+
+            // UI Toolkit ammo events
+            RaceEvents.FireMissileCountChanged(Missiles);
+            RaceEvents.FireHomingMissileCountChanged(HomingMissiles);
+            RaceEvents.FireMineCountChanged(Mines);
         }
         
 

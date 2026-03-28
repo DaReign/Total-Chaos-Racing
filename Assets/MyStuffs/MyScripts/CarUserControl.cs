@@ -28,6 +28,14 @@ namespace UnityStandardAssets.Vehicles.Car
         Boolean turnLeft = false;
         Boolean brake = false;
 
+        // Set by UI joystick (–1..1), merged with keyboard/gamepad
+        [NonSerialized] public float touchSteerAxis;
+
+        // Set by TestHUDController keyboard/gamepad polling
+        [NonSerialized] public float kbSteerAxis;
+        [NonSerialized] public bool kbGas;
+        [NonSerialized] public bool kbBrake;
+
 
         public float speed;
         private GameObject SpeedText;
@@ -112,61 +120,19 @@ namespace UnityStandardAssets.Vehicles.Car
 
 
 
-            if (Input.GetKey("k"))
-            {
-                KeyboardSteering = true;
-            }
-            if (Input.GetKey("a"))
-            {
-                gameObject.SetActive(true);
-            }
+            // Merge touch/UI input on top of keyboard/gamepad
+            // Keyboard/WASD/Gamepad (from TestHUDController)
+            if (kbGas) v = 1.0f;
+            else if (kbBrake) v = -1.0f;
+            if (Mathf.Abs(kbSteerAxis) > 0.01f) h = kbSteerAxis;
 
-            if (ForcedControllVar)
-            {
-                KeyboardSteering = true;
-            }
+            // Touch button overrides
+            if (forwardMove) v = 1.0f;
+            else if (brake) v = -1.0f;
 
-
-            if (!KeyboardSteering)
-            {
-                if (forwardMove)
-                {
-                    v = 1.0f;
-                }
-                else
-                {
-                    if (brake) { v = -1.0f; }
-                    else
-                    {
-                        v = 0.0f;
-                    }
-                }
-
-                if (turnRight)
-                {
-                    h = 1.0f;
-
-                    if (forwardMove)
-                    {
-                        v = 1.0f;
-                    }
-
-                }
-                else
-                {
-                    if (turnLeft)
-                    {
-                        h = -1.0f;
-                        if (forwardMove)
-                        {
-                            v = 1.0f;
-                        }
-
-                    }
-                    else { h = 0.0f; }
-                }
-
-            }
+            if (Mathf.Abs(touchSteerAxis) > 0.01f) h = touchSteerAxis;
+            else if (turnRight) h = 1.0f;
+            else if (turnLeft) h = -1.0f;
 
 
             if (NotMovieVar)

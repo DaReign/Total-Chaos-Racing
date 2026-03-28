@@ -1,0 +1,20 @@
+/* Shared base styles for all racing UI Toolkit screens */
+
+:root {
+    --racing-primary: #00BFFF;
+    --racing-accent: #FF6B35;
+    --racing-danger: #FF4444;
+    --racing-success: #4CAF50;
+    --racing-glass-bg: rgba(0, 0, 0, 0.45);
+    --racing-glass-border: rgba(255, 255, 255, 0.18);
+    --racing-text-primary: white;
+    --racing-text-secondary: rgba(255, 255, 255, 0.6);
+}
+
+.glass-panel {
+    background-color: var(--racing-glass-bg);
+    border-color: var(--racing-glass-border);
+    border-width: 1px;
+    border-radius: 12px;
+    padding: 12px;
+}
